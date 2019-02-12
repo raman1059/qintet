@@ -101,6 +101,7 @@ const postMessage = (message) => {
     });
     $('#exit-btn').on('click', () => {
      alert('Do you want to exit from the Room?');
+     var roomName = prompt('Enter Room Name!!')
     });
     $('#post-message').on('keyup', (event) => {
       if (event.keyCode === 13) {
