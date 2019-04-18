@@ -99,16 +99,25 @@ const postMessage = (message) => {
       const message = $('#post-message').val();
       postMessage(message);
     });
-    $('#exit-btn').on('click', () => {
-     alert('Do you want to exit from the Room?');
-     var roomName = prompt('Enter Room Name!!')
-    });
+    
     $('#post-message').on('keyup', (event) => {
       if (event.keyCode === 13) {
         const message = $('#post-message').val();
         postMessage(message);
       }
     });
+    
+    $('#exit-btn').on('click', () => {
+      formEl.show();
+      chatEl.html("");
+      formEl.form({
+        fields: {
+          roomName: 'empty',
+          username: 'empty',
+        },
+      });
+    });
+
   }
   
 
@@ -144,3 +153,6 @@ webrtc.on('videoAdded', (video, peer) => {
   });
 });
     
+
+ document.querySelector('.exit-btn-new').addEventListener('click', reload);
+
